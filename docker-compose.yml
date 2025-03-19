@@ -1,0 +1,52 @@
+services:
+  api:
+    build: ./api
+    container_name: api-container
+    networks:
+      - app-network
+    expose:
+      - "8800" 
+    restart: unless-stopped
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=sys_webapp
+      - DB_PASSWORD=webappPassword
+      - DB_NAME=webapp
+      - PORT=3000
+
+  front-nginx:
+    build: ./frontend  
+    container_name: frontend-nginx-container
+    volumes:
+      - ./nginx-node.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    depends_on:
+      - api  
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-container
+    restart: unless-stopped
+    networks:
+      - app-network
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: webapp
+      MYSQL_USER: sys_webapp
+      MYSQL_PASSWORD: webappPassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
