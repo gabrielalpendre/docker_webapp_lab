@@ -25,7 +25,7 @@ Este projeto de CRUD consiste em uma aplicação web completa que roda em docker
 
 1.  Clone este repositório.
 2.  Navegue até o diretório do projeto.
-3.  Execute `docker-compose up -d` ou podman-compose -f `podman-compose.yml up -d`
+3.  Execute `docker-compose up -d` ou `podman-compose -f podman-compose.yml up -d`
 
 ## Como executar em Docker Swarm
 
