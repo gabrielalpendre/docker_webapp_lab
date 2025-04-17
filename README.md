@@ -19,7 +19,7 @@ Este projeto de CRUD consiste em uma aplicação web completa que roda em docker
 ### para Docker: 
   Docker e Docker Compose instalados.
 ### para Podman: 
-  Cockpit, cockpit-podman (para gerenciamento) e podman-compose para o deploy.
+  Cockpit, cockpit-podman (para gerenciamento), Podman e Podman-compose para o deploy.
 
 ## Como executar localmente
 
