@@ -13,6 +13,4 @@ echo "Building Frontend NGINX image..."
 docker build -t node-frontend-nginx ./frontend
 
 echo "Deploying stack..."
-docker stack deploy -c docker-compose-swarm.yml stack_webapp
-
-docker stack ps stack_webapp
+docker stack deploy -c docker-compose-swarm.yml stack_webapp_2

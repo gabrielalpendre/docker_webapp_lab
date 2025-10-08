@@ -14,7 +14,7 @@ RUN yarn install
 COPY . .
 
 # Expose the port your app will run on
-EXPOSE 8800
+EXPOSE 8802
 
 # Run the API server
 CMD ["node", "index.js"]
