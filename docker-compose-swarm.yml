@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   api-2:
-    image: node-api
+    image: node-api-2
     networks:
       - app-network-2
     environment:
@@ -18,7 +18,7 @@ services:
         condition: on-failure
 
   front-nginx-2:
-    image: node-frontend-nginx
+    image: node-frontend-nginx-2
     volumes:
       - ./nginx-node.conf:/etc/nginx/conf.d/default.conf
     ports:
