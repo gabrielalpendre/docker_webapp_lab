@@ -7,10 +7,10 @@ if [ "$SWARM_STATUS" != "active" ]; then
 fi
 
 echo "Building API image..."
-docker build -t node-api ./api
+docker build -t node-api-2 ./api
 
 echo "Building Frontend NGINX image..."
-docker build -t node-frontend-nginx ./frontend
+docker build -t node-frontend-nginx-2 ./frontend
 
 echo "Deploying stack..."
 docker stack deploy -c docker-compose-swarm.yml stack_webapp_2

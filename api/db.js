@@ -11,7 +11,7 @@ export const db = mysql.createConnection({
 db.connect((err) => {
     if (err) {
         console.error('Erro ao conectar ao banco de dados:', err);
-        process.exit(1); // Encerra a aplicação se a conexão falhar
+        process.exit(1);
     } else {
         console.log('Conectado ao banco de dados!');
     }
