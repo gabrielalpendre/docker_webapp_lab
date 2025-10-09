@@ -2,7 +2,7 @@
 FROM node:18 AS build
 
 # Define a variável de ambiente
-ENV REACT_APP_API_URL=https://82-cs-9cb11d54-8dfa-4852-8846-edda448f4e9a.cs-us-east1-dogs.cloudshell.dev/api/
+ENV REACT_APP_API_URL=https://8080-cs-9cb11d54-8dfa-4852-8846-edda448f4e9a.cs-us-east1-dogs.cloudshell.dev/api/
 
 # Define o diretório de trabalho
 WORKDIR /app
@@ -27,7 +27,7 @@ FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Exponha a porta 80 para o Nginx
-EXPOSE 82
+EXPOSE 8080
 
 # Inicia o Nginx
 CMD ["nginx", "-g", "daemon off;"]

@@ -14,6 +14,6 @@ app.use((req, res, next) => {
 
 app.use("/api/", userRoutes)
 
-app.listen(8800, () => {
-    console.log('Servidor /api/ na porta 8800')
+app.listen(8802, () => {
+    console.log('Servidor /api/ na porta 8802')
 })
